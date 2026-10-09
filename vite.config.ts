@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react(),],
-    base: '/esffiras-e-commerce/',
+    base: '/E-commer-esfirras/',
 })
