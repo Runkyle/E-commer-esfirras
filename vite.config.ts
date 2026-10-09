@@ -7,5 +7,5 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
-  base: '/E-commer-esfirras/',
+  base: './',
 })
