@@ -85,7 +85,7 @@ export const CartDrawer: React.FC = () => {
             <span className="cart-empty-icon text-5xl mb-3 opacity-75">🛒</span>
             <h4 className="text-lg font-bold text-gray-800 mb-1">Sua sacola está vazia</h4>
             <p className="text-sm text-gray-500 max-w-xs mb-6">
-              Escolha deliciosas esfihas no cardápio e adicione ao seu pedido!
+              Escolha deliciosas esfirras no cardápio e adicione ao seu pedido!
             </p>
             <button
               type="button"
