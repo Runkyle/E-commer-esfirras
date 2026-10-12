@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>Ícone da logo</title>
+  <rect width="256" height="256" rx="42" fill="#f20d12"/>
+  <path d="M128 42c-12 0-20 8-27 22h54c-7-14-15-22-27-22Z" fill="#fff"/>
+  <path d="M96 70h64l47 86c7 13-3 27-18 27H67c-15 0-25-14-18-27L96 70Z" fill="#fff"/>
+  <path d="M81 93c-4-5-11 0-9 7l38 68c8 14 28 14 36 0l38-68c2-7-5-12-9-7l-18 27c-8-7-17-10-29-10s-21 3-29 10L81 93Z" fill="#f20d12"/>
+  <ellipse cx="128" cy="126" rx="13" ry="5.5" fill="#fff"/>
+</svg>
