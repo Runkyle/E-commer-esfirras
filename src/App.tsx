@@ -70,7 +70,7 @@ const AppContent: React.FC = () => {
 // Componente Raiz com os Provedores Globais
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CartProvider>
         <AppContent />
       </CartProvider>

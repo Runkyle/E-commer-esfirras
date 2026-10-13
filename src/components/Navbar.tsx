@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
         {/* Logotipo / Marca */}
         <Link to="/" className="flex items-center gap-3 text-decoration-none group">
           <span className="text-3xl transition-transform group-hover:scale-110">
-            <img className='w-[80px] h-[80px] object-cover rounded-lg' src="/imagens-icons/logo-menor.jpeg" alt="logo"  />
+            <img className='w-[80px] h-[80px] object-cover rounded-lg' src={`${import.meta.env.BASE_URL}imagens-icons/logo-menor.jpeg`} alt="logo"  />
           </span>
           <div className="flex flex-col text-left">
             <span className="text-xl sm:text-2xl font-black text-orange-600 tracking-tight leading-tight">
