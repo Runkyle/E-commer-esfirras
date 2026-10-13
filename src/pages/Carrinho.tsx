@@ -77,7 +77,7 @@ export const Carrinho: React.FC = () => {
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover bg-gray-50 shrink-0"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=200&q=80';
+                        'https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=200&q=80';
                     }}
                   />
 

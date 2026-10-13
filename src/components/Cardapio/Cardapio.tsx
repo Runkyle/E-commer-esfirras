@@ -172,7 +172,7 @@ export const Cardapio: React.FC<CardapioProps> = ({
                     loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80';
+                        'https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=600&q=80';
                     }}
                   />
                   <span className="product-category-tag absolute top-3 left-3 bg-black/60 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">

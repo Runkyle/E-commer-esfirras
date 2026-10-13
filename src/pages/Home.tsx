@@ -54,7 +54,7 @@ export const Home: React.FC = () => {
           <div className="relative">
             <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=800&q=80"
                 alt="Esfihas quentinhas da Esfiharia Express"
                 className="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700"
               />

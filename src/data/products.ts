@@ -10,8 +10,8 @@ export const products: Product[] = [
     descricao: "Tradicional esfiha aberta de carne moída temperada com tomates frescos, cebola, limão e especiarias árabes.",
     price: 4.50,
     preco: 4.50,
-    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80",
-    imagem: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=600&q=80",
     category: "Tradicionais",
     categoria: "Tradicionais"
   },
@@ -118,8 +118,8 @@ export const products: Product[] = [
     descricao: "Recheada com doce de leite cremoso artesanal e finalizada com lascas de coco fresco levemente tostado.",
     price: 6.90,
     preco: 6.90,
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=600&q=80",
-    imagem: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.pexels.com/photos/16107649/pexels-photo-16107649.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imagem: "https://images.pexels.com/photos/16107649/pexels-photo-16107649.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Doces",
     categoria: "Doces"
   },
@@ -133,8 +133,8 @@ export const products: Product[] = [
     descricao: "Lata 350ml bem gelada.",
     price: 6.00,
     preco: 6.00,
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
-    imagem: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1771425732867-2a2f9ad34f34?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1771425732867-2a2f9ad34f34?auto=format&fit=crop&w=600&q=80",
     category: "Bebidas",
     categoria: "Bebidas"
   },
@@ -146,8 +146,8 @@ export const products: Product[] = [
     descricao: "Feito na hora com laranjas frescas e selecionadas, 100% natural sem adição de açúcar.",
     price: 8.50,
     preco: 8.50,
-    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=600&q=80",
-    imagem: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1740555612192-3e3cf77b5d1f?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1740555612192-3e3cf77b5d1f?auto=format&fit=crop&w=600&q=80",
     category: "Bebidas",
     categoria: "Bebidas"
   },
@@ -159,8 +159,8 @@ export const products: Product[] = [
     descricao: "Garrafa 500ml com ou sem gás.",
     price: 4.00,
     preco: 4.00,
-    image: "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=600&q=80",
-    imagem: "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.pexels.com/photos/35020123/pexels-photo-35020123.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imagem: "https://images.pexels.com/photos/35020123/pexels-photo-35020123.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Bebidas",
     categoria: "Bebidas"
   }

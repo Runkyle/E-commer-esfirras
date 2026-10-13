@@ -115,7 +115,7 @@ export const CartDrawer: React.FC = () => {
                       className="cart-item-image w-16 h-16 rounded-lg object-cover bg-gray-100 shrink-0"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src =
-                          'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=150&q=80';
+                          'https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=150&q=80';
                       }}
                     />
 
