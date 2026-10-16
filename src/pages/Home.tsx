@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { useProductsQuery } from '../hooks/useProductsQuery';
 
 export const Home: React.FC = () => {
   const { addToCart } = useCart();
+  const { data: productsList = products } = useProductsQuery();
 
   // Seleciona as 3 esfihas mais populares para os destaques
-  const featuredProducts = products.slice(0, 3);
+  const featuredProducts = productsList.slice(0, 3);
 
   return (
     <div className="home-page flex flex-col gap-12 sm:gap-20 pb-16">
@@ -16,11 +18,11 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6 text-left">
             <span className="inline-flex items-center gap-2 self-start bg-orange-100 text-orange-800 text-xs sm:text-sm font-extrabold px-3.5 py-1.5 rounded-full border border-orange-200">
-              🔥 Assadas no Forno a Lenha
+              🔥 Assadas no Forno, super quentinhas e Deliciosas!!!
             </span>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.15]">
-              O autêntico sabor das <span className="text-orange-600">esfihas árabes</span> quentinhas na sua casa.
+              O autêntico sabor das <span className="text-red-600">esfirras árabes</span> quentinhas na sua casa.
             </h1>
 
             <p className="text-gray-600 text-sm sm:text-lg leading-relaxed max-w-xl">
@@ -30,7 +32,7 @@ export const Home: React.FC = () => {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/cardapio"
-                className="bg-orange-600 hover:bg-orange-700 active:scale-95 text-white font-black text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl shadow-orange-600/30 transition-all flex items-center gap-2"
+                className="bg-red-600 hover:bg-red-700 active:scale-95 text-white font-black text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl shadow-orange-600/30 transition-all flex items-center gap-2"
               >
                 <span>Ver Cardápio Completo</span>
                 <span>➜</span>

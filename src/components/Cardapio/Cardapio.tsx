@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { products as defaultProducts } from '../../data/products';
+import { useProductsQuery } from '../../hooks/useProductsQuery';
 import CartContext from '../../context/CartContext';
 import type { Product } from '../../types/product';
 import './Cardapio.css';
@@ -12,9 +13,22 @@ interface CardapioProps {
 const CATEGORIES = ['Todas', 'Tradicionais', 'Especiais', 'Doces', 'Bebidas'];
 
 export const Cardapio: React.FC<CardapioProps> = ({
-  productsList = defaultProducts,
+  productsList,
   onAddToCart,
 }) => {
+  // Consumindo dados assíncronos e em cache via TanStack Query
+  const {
+    data: fetchedProducts,
+    isLoading,
+    isError,
+    error,
+    refetch,
+    isFetching,
+  } = useProductsQuery();
+
+  // Usa a lista passada via prop ou os dados retornados pelo TanStack Query
+  const effectiveProducts = productsList || fetchedProducts || defaultProducts;
+
   const cartContext = React.useContext(CartContext);
   const [selectedCategory, setSelectedCategory] = useState<string>('Todas');
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -23,21 +37,21 @@ export const Cardapio: React.FC<CardapioProps> = ({
   // Contagem de itens por categoria
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {
-      Todas: productsList.length,
+      Todas: effectiveProducts.length,
     };
 
     CATEGORIES.slice(1).forEach((cat) => {
-      counts[cat] = productsList.filter(
+      counts[cat] = effectiveProducts.filter(
         (p) => (p.category || p.categoria) === cat
       ).length;
     });
 
     return counts;
-  }, [productsList]);
+  }, [effectiveProducts]);
 
   // Filtragem por categoria e termo de pesquisa
   const filteredProducts = useMemo(() => {
-    return productsList.filter((product) => {
+    return effectiveProducts.filter((product) => {
       const productCategory = product.category || product.categoria;
       const matchesCategory =
         selectedCategory === 'Todas' || productCategory === selectedCategory;
@@ -51,7 +65,7 @@ export const Cardapio: React.FC<CardapioProps> = ({
 
       return matchesCategory && matchesSearch;
     });
-  }, [productsList, selectedCategory, searchTerm]);
+  }, [effectiveProducts, selectedCategory, searchTerm]);
 
   // Formatação de moeda em BRL
   const formatPrice = (val: number) => {
@@ -79,7 +93,7 @@ export const Cardapio: React.FC<CardapioProps> = ({
       {/* Cabeçalho */}
       <header className="cardapio-header text-center mb-6 sm:mb-8">
         <span className="cardapio-badge inline-block bg-orange-100 text-orange-700 text-xs font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-2 sm:mb-3 border border-orange-200">
-          Cardápio Completo
+          Cardápio Completo {isFetching && !isLoading ? '• Atualizando...' : ''}
         </span>
         <h2 className="cardapio-title text-2xl sm:text-4xl font-black text-gray-900 tracking-tight">
           Nossas Delícias Árabes
@@ -147,8 +161,41 @@ export const Cardapio: React.FC<CardapioProps> = ({
         </div>
       </div>
 
-      {/* Grid Responsivo de Produtos (1 coluna mobile, 2 tablet, 3-4 desktop) */}
-      {filteredProducts.length > 0 ? (
+      {/* Estado 1: Carregamento com Skeletons (TanStack Query isLoading) */}
+      {isLoading ? (
+        <div className="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {Array.from({ length: 8 }).map((_, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs animate-pulse p-4 flex flex-col gap-3"
+            >
+              <div className="w-full h-48 bg-gray-200 rounded-xl" />
+              <div className="h-5 bg-gray-200 rounded-md w-3/4" />
+              <div className="h-3.5 bg-gray-100 rounded-md w-full" />
+              <div className="h-3.5 bg-gray-100 rounded-md w-2/3" />
+              <div className="mt-auto pt-3 border-t border-gray-100 flex justify-between items-center">
+                <div className="h-6 bg-gray-200 rounded-md w-16" />
+                <div className="h-9 bg-gray-200 rounded-xl w-24" />
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : isError ? (
+        /* Estado 2: Erro ao carregar (TanStack Query isError) */
+        <div className="text-center py-12 px-4 bg-red-50 rounded-2xl border border-red-200 my-6 max-w-md mx-auto">
+          <div className="text-4xl mb-2">⚠️</div>
+          <h3 className="text-base font-bold text-red-800 mb-1">Erro ao carregar o cardápio</h3>
+          <p className="text-xs text-red-600 mb-4">{error?.message || 'Não foi possível carregar os produtos.'}</p>
+          <button
+            type="button"
+            onClick={() => refetch()}
+            className="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm"
+          >
+            Tentar Novamente
+          </button>
+        </div>
+      ) : filteredProducts.length > 0 ? (
+        /* Estado 3: Sucesso com Grid Responsivo de Produtos */
         <div className="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {filteredProducts.map((product) => {
             const name = product.name || product.nome;
@@ -172,7 +219,7 @@ export const Cardapio: React.FC<CardapioProps> = ({
                     loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1777315387661-42a289edccba?auto=format&fit=crop&w=600&q=80';
+                        'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80';
                     }}
                   />
                   <span className="product-category-tag absolute top-3 left-3 bg-black/60 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -220,7 +267,7 @@ export const Cardapio: React.FC<CardapioProps> = ({
           })}
         </div>
       ) : (
-        /* Estado Vazio */
+        /* Estado 4: Busca sem resultados */
         <div className="empty-state text-center py-12 px-4 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 my-6">
           <div className="empty-state-icon text-4xl mb-3">🔍</div>
           <h3 className="text-lg font-bold text-gray-800 mb-1">Nenhum item encontrado</h3>
