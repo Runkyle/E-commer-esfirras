@@ -5,6 +5,7 @@ import AppRoutes from './routes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartDrawer from './components/Cart/CartDrawer';
+import { ChatWidget } from './components/ChatWidget'; // 1. Importe o widget do chat
 import './App.css';
 
 // Barra Flutuante de Sacola no Celular (Mobile-First)
@@ -46,7 +47,7 @@ const MobileFloatingCart: React.FC = () => {
 // Componente com o conteúdo da aplicação que consome hooks de rota
 const AppContent: React.FC = () => {
   return (
-    <div className="app-layout min-h-screen flex flex-col bg-stone-50/50 pb-20 sm:pb-0">
+    <div className="app-layout min-h-screen flex flex-col bg-stone-50/50 pb-20 sm:pb-0 relative">
       {/* Barra de Navegação Global com Links */}
       <Navbar />
 
@@ -63,6 +64,9 @@ const AppContent: React.FC = () => {
 
       {/* Rodapé Global */}
       <Footer />
+
+      {/* 2. Chat Flutuante da IA posicionado globalmente */}
+      <ChatWidget />
     </div>
   );
 };
