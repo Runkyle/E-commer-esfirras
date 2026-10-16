@@ -8,6 +8,8 @@ import CartDrawer from './components/Cart/CartDrawer';
 import { ChatWidget } from './components/ChatWidget'; // 1. Importe o widget do chat
 import './App.css';
 
+
+
 // Barra Flutuante de Sacola no Celular (Mobile-First)
 const MobileFloatingCart: React.FC = () => {
   const { totalItems, totalPrice } = useCart();
@@ -40,6 +42,7 @@ const MobileFloatingCart: React.FC = () => {
         </div>
         <span className="text-base font-black tracking-wide">{formattedTotal}</span>
       </button>
+      
     </aside>
   );
 };
