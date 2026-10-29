@@ -294,9 +294,7 @@ export const Cardapio: React.FC<CardapioProps> = ({
                 <h3 className="cardapio-title text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
                   Nossos Combos
                 </h3>
-                <p className="cardapio-subtitle text-xs sm:text-base text-gray-500 mt-1">
-                  Esfihas quentinhas com bebidas inclusas com a mesma qualidade artesanal e o melhor custo-benefício.
-                </p>
+                
               </div>
 
               <div className="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
