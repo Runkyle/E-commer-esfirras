@@ -124,6 +124,60 @@ export const products: Product[] = [
     categoria: "Doces"
   },
 
+  // --- COMBOS ---
+  {
+    id: 13,
+    name: "Combo Individual (2 esfirras + lata)",
+    nome: "Combo Individual (2 esfirras + lata)",
+    description: "2 esfirras à sua escolha + 1 refrigerante em lata 350ml geladinho.",
+    descricao: "2 esfirras à sua escolha + 1 refrigerante em lata 350ml geladinho.",
+    price: 16.00,
+    preco: 16.00,
+    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80",
+    category: "Combos",
+    categoria: "Combos"
+  },
+  {
+    id: 14,
+    name: "Combo Dupla (4 esfirras + refri 1,5L)",
+    nome: "Combo Dupla (4 esfirras + refri 1,5L)",
+    description: "4 esfirras à sua escolha + 1 refrigerante 1,5L bem gelado.",
+    descricao: "4 esfirras à sua escolha + 1 refrigerante 1,5L bem gelado.",
+    price: 30.00,
+    preco: 30.00,
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+    category: "Combos",
+    categoria: "Combos"
+  },
+  {
+    id: 15,
+    name: "Combo Família (8 esfirras + refri 1,5L)",
+    nome: "Combo Família (8 esfirras + refri 1,5L)",
+    description: "8 esfirras à sua escolha + 1 refrigerante 1,5L para toda a família.",
+    descricao: "8 esfirras à sua escolha + 1 refrigerante 1,5L para toda a família.",
+    price: 54.00,
+    preco: 54.00,
+    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    category: "Combos",
+    categoria: "Combos"
+  },
+  {
+    id: 16,
+    name: "Combo Turma (12 esfirras + 2 refris 1,5L)",
+    nome: "Combo Turma (12 esfirras + 2 refris 1,5L)",
+    description: "12 esfirras à sua escolha + 2 refrigerantes 1,5L para toda a galera.",
+    descricao: "12 esfirras à sua escolha + 2 refrigerantes 1,5L para toda a galera.",
+    price: 78.00,
+    preco: 78.00,
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+    category: "Combos",
+    categoria: "Combos"
+  },
+
   // --- BEBIDAS ---
   {
     id: 10,
